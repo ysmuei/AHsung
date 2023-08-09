@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+  }
+  .container {
+    width: 100%;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .basic_btn {
+    width: 90vw;
+    height: 7vh;
+    font-size: 300%;
+    color: white;
+    font-weight: 700;
+    background: #A5CC2B;
+    border-radius: 30px;
+    word-wrap: break-word;
+    border-width: 0;
+  }
+  .basic_btn.clicked {
+    background: #A5CC2B;
+    opacity: 0.5;
+  }
+
+/* Login */
+.LoginContainer {
+  width: 100%;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.loginInput {
+  width: 100%;
+  height: 6vh;
+  padding: 30px;
+  border-radius: 30px;
+  font-size: 200%;
+  color: black;
+}
+
+.loginSubmit {
+  text-align: center;
+  background: #DFDFDF;
+  color: #6F6F6F;
+  margin-top: 10;
+  cursor: pointer;
+}
+
+.greenButton {
+  background: #A5CC2B;
+  color: #F6F6F6;
+}
+
+/* ProfileForm */
+
+.profilForm {
+  width: 100%;
+  height: 35vh;
+  background-color: bisque;
+  border-end-end-radius: 10%;
+  border-end-start-radius: 10%;
+}
+
+.header {
+  width: "100%";
+  height: 150;
+  background: blue;
+  align-Items: center;
+  justify-content: center;
+  display: flex;
+  margin-top: 2vh;
+}
+
+.order {
+  width: 90vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -10%;
+  flex-direction: column;
+}
+
+.orderBtn {
+  width: 48%;
+  height: 7vh;
+  background-color: white;
+  color: black;
+}
