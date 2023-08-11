@@ -3,16 +3,15 @@ import Splash from "../routes/Splash";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Login from "routes/Login";
 import FranchHome from "routes/FranchHome";
+import Order from "routes/Order";
 const AppRouter = () => {
   return (
     <BrowserRouter>
       <div
         style={{
-          maxWidth: "90vw",
-          maxHeight: "90vh",
+          maxWidth: "1000px",
+          width: "100%",
           margin: "0 auto",
-          marginTop: 80,
-          marginBottom: 0,
           display: "flex",
           justifyContent: "center",
         }}
@@ -21,6 +20,7 @@ const AppRouter = () => {
           <Route path="/" element={<Splash />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/FranchHome" element={<FranchHome />} />
+          <Route path="/Order" element={<Order  />} />
         </Routes>
 
       </div>

@@ -12,10 +12,9 @@ const Home = () => {
   };
   return (
     <div className="container">
-        <Link to="/Login">
-          <img src={logo} alt="아성주류발주어플" style={{ width: "380px", height: "150px", marginBottom: 500, marginTop: 150 }} />
+        <Link to="/Login" style={{ marginBottom: "70%", marginTop: "40%"}}>
+          <img src={logo} alt="아성주류발주어플" style={{ width: "470px"}} />
         </Link>
-        
         <button
           className={`basic_btn ${isClicked ? "clicked" : ""}`}
           onClick={handleButtonClick}

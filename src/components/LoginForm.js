@@ -16,7 +16,7 @@ const LoginForm = () => {
   };
   return (
     <>
-      <form className="container">
+      <form>
         <input
           name="email"
           type="email"
@@ -26,8 +26,6 @@ const LoginForm = () => {
           onChange={onChange}
           className="loginInput"
         />
-        <br/>
-        <br/>
         <input
           name="password"
           type="password"
