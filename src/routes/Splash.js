@@ -12,15 +12,17 @@ const Home = () => {
   };
   return (
     <div className="container">
-        <Link to="/Login" style={{ marginBottom: "70%", marginTop: "40%"}}>
-          <img src={logo} alt="아성주류발주어플" style={{ width: "470px"}} />
-        </Link>
+      <Link to="/ManagerLogin" style={{ marginBottom: "70%", marginTop: "40%" }}>
+        <img src={logo} alt="아성주류발주어플" style={{ width: "470px" }} />
+      </Link>
+      <Link to="/Login" style={{width: "100%", display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
         <button
           className={`basic_btn ${isClicked ? "clicked" : ""}`}
           onClick={handleButtonClick}
         >
           가맹점주 로그인
         </button>
+      </Link>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const LoginForm = () => {
+const LoginForm = ( {placeholder} ) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const isFormValid = email !== "" && password !== ""; // 이메일과 비밀번호 모두 입력되었는지 확인
@@ -20,7 +20,7 @@ const LoginForm = () => {
         <input
           name="email"
           type="email"
-          placeholder="가맹점 코드"
+          placeholder={placeholder}
           required
           value={email}
           onChange={onChange}

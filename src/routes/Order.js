@@ -25,7 +25,7 @@ const Order = () => {
           <p style={{fontSize: '40px', fontWeight: 500}}>배송지</p>
           <h3 style={{fontSize: 50, marginTop: -10, fontWeight: 900}}>유빈이네 닭갈비</h3>
           <p style={{fontSize: '40px', fontWeight: 500, marginTop: 20}}>납기요청일</p>
-          <p style={{fontSize: '40px', fontWeight: 500, marginTop: -20, color: '#A5CC2B', fontSize: 50, fontWeight: 600}}>2023.08.01</p>
+          <p style={{fontSize: '40px', fontWeight: 500, marginTop: -10, color: '#A5CC2B', fontSize: 50, fontWeight: 600}}>2023.08.01</p>
         </div>
       </div>
     </div>

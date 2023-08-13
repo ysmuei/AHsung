@@ -1,16 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaFileAlt } from "react-icons/fa";
-import { FaBoxArchive } from "react-icons/fa6";
 import Profile from "./Profile";
 
-const FranchHome = () => {
-  const name = "유빈이네 닭갈비"
+const ManagerHome = () => {
+  const name = "아성주류 관리자";
   return (
     <div style={{ width: "100%", height: "100vh", backgroundColor: "#DFDFDF" }}>
-      <Profile name={name}/>
+      <Profile name={name} />
       <div className="order">
-        <Link to="/Order" style={{width: '80%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <Link
+          to="/"
+          style={{
+            width: "90%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center", 
+          }}
+        >
           <button
             className="basic_btn"
             style={{
@@ -19,7 +25,7 @@ const FranchHome = () => {
               fontSize: "45px",
             }}
           >
-            발주하러 가기
+            발주 가맹점 현황 확인하기
           </button>
         </Link>
         <div
@@ -31,18 +37,10 @@ const FranchHome = () => {
             justifyContent: "space-between",
           }}
         >
-          <button className="basic_btn orderBtn">
-            <FaFileAlt size="60" style={{ marginRight: "10px" }} />
-            발주내역
-          </button>
-          <button className="basic_btn orderBtn">
-            <FaBoxArchive size="60" style={{ marginRight: "10px" }} />
-            발주현황
-          </button>
         </div>
       </div>
     </div>
   );
 };
 
-export default FranchHome;
+export default ManagerHome;
