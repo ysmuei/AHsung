@@ -28,6 +28,13 @@ const Order = () => {
           <p style={{fontSize: '40px', fontWeight: 500, marginTop: -10, color: '#A5CC2B', fontSize: 50, fontWeight: 600}}>2023.08.01</p>
         </div>
       </div>
+      <div className="order_list">
+          <Link to="/OrderCheck" style={{display: 'flex', justifyContent: 'center', }}>
+            <button className="basic_btn" style={{backgroundColor: '#587302', fontWeight: 500}}>
+              주문하기
+            </button>
+          </Link>
+        </div>
     </div>
   );
 };

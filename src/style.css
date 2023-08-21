@@ -98,18 +98,18 @@ form {
 }
 
 .order {
-  width: 100%;
+  width: 90%;
   display: flex;
   align-items: center;
-  margin-top: -6%;
+  margin-top: -10%;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .orderBtn {
-  width: 47%;
-  background-color: white;
-  color: black;
+  width: 90%;
+  background-color: #587302;
+  color: white;
   font-size: 40px;
   font-weight: 600;
   display: flex;
@@ -118,3 +118,26 @@ form {
 }
 
 /* order */
+
+/* ManagerHome */
+
+.manager {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.managerHome_Link {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dropDown {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -16,7 +16,7 @@ const Profile = ( {name} ) => {
           <img
             src={logo}
             style={{
-              width: "30%",
+              width: "25%",
               marginTop: "30px"
             }}
           />
@@ -31,7 +31,7 @@ const Profile = ( {name} ) => {
             padding: "30px",
           }}
         >
-          <p style={{ fontSize: "3.5vw", marginTop: "8vw", fontWeight: "600" }}>
+          <p style={{ fontSize: "4.5vw", marginTop: "8vw", fontWeight: "600" }}>
             {currentDate.toLocaleDateString("ko-KR", {
               month: "long",
               day: "numeric",

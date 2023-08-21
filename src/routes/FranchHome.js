@@ -5,42 +5,41 @@ import { FaBoxArchive } from "react-icons/fa6";
 import Profile from "./Profile";
 
 const FranchHome = () => {
-  const name = "유빈이네 닭갈비"
+  const name = "유빈이네 닭갈비";
   return (
-    <div style={{ width: "100%", height: "100vh", backgroundColor: "#DFDFDF" }}>
-      <Profile name={name}/>
+    <div style={{ width: "100%", height: "100vh", backgroundColor: "#DFDFDF", display: "flex", flexDirection: "column", alignItems: 'center' }}>
+      <Profile name={name} />
       <div className="order">
-        <Link to="/Order" style={{width: '80%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <button
-            className="basic_btn"
-            style={{
-              backgroundColor: "#587302",
-              width: "100%",
-              fontSize: "45px",
-            }}
-          >
-            발주하러 가기
-          </button>
-        </Link>
-        <div
+        <Link
+          to="/Order"
           style={{
-            width: "80%",
-            margin: "50px 0",
-            marginTop: 40,
+            width: "100%",
             display: "flex",
-            justifyContent: "space-between",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
           <button className="basic_btn orderBtn">
             <FaFileAlt size="60" style={{ marginRight: "10px" }} />
-            발주내역
+            발주하기
           </button>
+        </Link>
+        <Link
+          to="/Order"
+          style={{
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <button className="basic_btn orderBtn">
             <FaBoxArchive size="60" style={{ marginRight: "10px" }} />
             발주현황
           </button>
-        </div>
+        </Link>
       </div>
+      
     </div>
   );
 };
