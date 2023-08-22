@@ -7,6 +7,7 @@ import Order from "routes/Order";
 import ManagerLogin from "routes/ManagerLogin";
 import ManagerHome from "routes/ManagerHome";
 import OrderCheck from "routes/OrderCheck";
+import OrderEnd from "routes/OrderEnd";
 const AppRouter = () => {
   return (
     <BrowserRouter>
@@ -27,7 +28,7 @@ const AppRouter = () => {
           <Route path="/ManagerHome" element={<ManagerHome />} />
           <Route path="/Order" element={<Order  />} />
           <Route path="/OrderCheck" element={<OrderCheck  />} />
-
+          <Route path="/OrderEnd" element={<OrderEnd  />} />
         </Routes>
 
       </div>

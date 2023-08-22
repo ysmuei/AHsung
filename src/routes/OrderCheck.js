@@ -30,7 +30,9 @@ const OrderCheck = () => {
                     <p style={{fontSize: 40, margin: 10}}>300ml</p>
                     <p style={{fontSize: 30, margin: 10}}>(120개)</p>
                 </div>
-                <div style={{width: 250, height: 250, backgroundColor: "gray"}}></div>
+                <div style={{width: 250, height: 250, backgroundColor: "gray"}}>
+
+                </div>
             </div>
         </div>
         <div>
@@ -60,7 +62,7 @@ const OrderCheck = () => {
           <p style={{ fontSize: "40px", marginTop: -20 }}>2023.08.01 까지</p>
           <hr style={{marginBottom: 100}}/>
         </div>
-        <Link to="/OrderCheck" style={{display: 'flex', justifyContent: 'center', }}>
+        <Link to="/OrderEnd" style={{display: 'flex', justifyContent: 'center', }}>
             <button className="basic_btn" style={{backgroundColor: '#587302', fontWeight: 500, position: 'absolute', bottom: 120}}>
               주문하기
             </button>
