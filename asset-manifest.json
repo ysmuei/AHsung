@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/AHsung/static/css/main.48ca03de.css",
+    "main.js": "/AHsung/static/js/main.b6729c5c.js",
+    "static/media/logo.svg": "/AHsung/static/media/logo.07a642e74d952e94db83333e3c556aa2.svg",
+    "index.html": "/AHsung/index.html",
+    "main.48ca03de.css.map": "/AHsung/static/css/main.48ca03de.css.map",
+    "main.b6729c5c.js.map": "/AHsung/static/js/main.b6729c5c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.48ca03de.css",
+    "static/js/main.b6729c5c.js"
+  ]
+}
