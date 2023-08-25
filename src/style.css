@@ -136,8 +136,28 @@ form {
 }
 .dropDown {
   width: 90%;
-  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+
+
+
+
+
+.example-custom-input {
+  border: white;
+  font-size: 60px;
+  color: #A5CC2B;
+  font-weight: 700;
+  cursor: pointer;
+}
+.order-custom-inout{
+  width: 750px;
+  font-size: 60px;
+  color: #587302;
+  font-weight: 700;
+  text-align: center;
 }

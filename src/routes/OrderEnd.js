@@ -25,14 +25,14 @@ const OrderEnd = () => {
         </p>
 
         <Link
-          to="/FranchHome"
+          to="/OrderContent"
           style={{ width: "100%", display: "flex", justifyContent: "center" }}
         >
           <button
             className="basic_btn"
             style={{ backgroundColor: "#587302", fontWeight: 500 }}
           >
-            발주현황 보러가기
+            발주내역 보러가기
           </button>
         </Link>
 

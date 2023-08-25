@@ -25,7 +25,7 @@ const FranchHome = () => {
           </button>
         </Link>
         <Link
-          to="/Order"
+          to="/OrderContent"
           style={{
             width: "100%",
             display: "flex",

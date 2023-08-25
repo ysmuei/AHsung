@@ -1,6 +1,6 @@
 import React from "react";
 import Splash from "../routes/Splash";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "routes/Login";
 import FranchHome from "routes/FranchHome";
 import Order from "routes/Order";
@@ -8,6 +8,7 @@ import ManagerLogin from "routes/ManagerLogin";
 import ManagerHome from "routes/ManagerHome";
 import OrderCheck from "routes/OrderCheck";
 import OrderEnd from "routes/OrderEnd";
+import OrderContent from "routes/OrderContent";
 const AppRouter = () => {
   return (
     <BrowserRouter>
@@ -29,6 +30,7 @@ const AppRouter = () => {
           <Route path="/Order" element={<Order  />} />
           <Route path="/OrderCheck" element={<OrderCheck  />} />
           <Route path="/OrderEnd" element={<OrderEnd  />} />
+          <Route path="/OrderContent" element={<OrderContent  />} />
         </Routes>
 
       </div>

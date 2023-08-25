@@ -15,6 +15,7 @@ const Profile = ( {name} ) => {
         <header className="header">
           <img
             src={logo}
+            alt='로고'
             style={{
               width: "25%",
               marginTop: "30px"
