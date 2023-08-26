@@ -119,6 +119,56 @@ form {
 
 /* order */
 
+
+.tabView {
+  width: 100%;
+  background-color: aqua;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.tabButtons{
+  width: 100%;
+  background-color: antiquewhite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tabName{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+}
+
+.tabButton {
+  width: 130px;
+  height: 140px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 20px;
+  background-color: #BDBDBD;
+  border-width: 0;
+}
+.orderImg {
+  width: 120px;
+  height: 120px;
+}
+
+.alcoholName {
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+.alcoholName.active{
+  color: #88B00C;;
+}
+.tabButton.active {
+  background-color: #88B00C; /* 선택된 탭의 배경색 */
+}
 /* ManagerHome */
 
 .manager {
