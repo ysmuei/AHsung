@@ -27,6 +27,30 @@ const Order = () => {
   const handleTabClick = (tab) => {
     setSelectedTab(tab);
   };
+
+  const [quantities, setQuantities] = useState({
+    후레쉬: 0, 클래식: 0, 매화수: 0, 진로이즈백: 0, 클래식18L: 0, 처음처럼: 0, 청하: 0, 이제우린: 0
+  });
+  const handleQuantityChange = (drink, operation) => {
+    if (operation === "+") {
+      setQuantities((prevQuantities) => ({
+        ...prevQuantities,
+        [drink]: prevQuantities[drink] + 1,
+      }));
+    } else if (operation === "-") {
+      if (quantities[drink] > 0) {
+        setQuantities((prevQuantities) => ({
+          ...prevQuantities,
+          [drink]: prevQuantities[drink] - 1,
+        }));
+      }
+    }
+  };
+  const drinks = [
+    { name: "후레쉬" }, { name: "클래식" }, { name: "매화수" }, 
+    { name: "진로이즈백" }, { name: "클래식1.8L" }, { name: "처음처럼" },
+    { name: "청하" }, { name: "이제우린" },
+  ];
   return (
     <div style={{ width: "100%", height: "100vh", backgroundColor: "#DFDFDF" }}>
       <div className="profilForm" style={{ height: "30%" }}>
@@ -111,71 +135,160 @@ const Order = () => {
               className={`tabButton ${selectedTab === "소주" ? "active" : ""}`}
               onClick={() => handleTabClick("소주")}
             >
-              <img className="orderImg" src={selectedTab === "소주" ? soju : sojuGray} alt="소주" />
-              
+              <img
+                className="orderImg"
+                src={selectedTab === "소주" ? soju : sojuGray}
+                alt="소주"
+              />
             </button>
-            <p className={`alcoholName ${selectedTab === "소주" ? "active" : ""}`}>소주</p>
+            <p
+              className={`alcoholName ${
+                selectedTab === "소주" ? "active" : ""
+              }`}
+            >
+              소주
+            </p>
           </div>
           <div className="tabName">
-          <button
-            className={`tabButton ${selectedTab === "맥주" ? "active" : ""}`}
-            onClick={() => handleTabClick("맥주")}
-          >
-            <img className="orderImg" src={selectedTab === "맥주" ? beer : beerGray} alt="맥주" />
-          
-          </button>
-            <p className={`alcoholName ${selectedTab === "맥주" ? "active" : ""}`}>맥주</p>
+            <button
+              className={`tabButton ${selectedTab === "맥주" ? "active" : ""}`}
+              onClick={() => handleTabClick("맥주")}
+            >
+              <img
+                className="orderImg"
+                src={selectedTab === "맥주" ? beer : beerGray}
+                alt="맥주"
+              />
+            </button>
+            <p
+              className={`alcoholName ${
+                selectedTab === "맥주" ? "active" : ""
+              }`}
+            >
+              맥주
+            </p>
           </div>
           <div className="tabName">
-          <button
-            className={`tabButton ${selectedTab === "막걸리" ? "active" : ""}`}
-            onClick={() => handleTabClick("막걸리")}
-          >
-            <img className="orderImg" src={selectedTab === "막걸리" ? makgeolli : makgeolliGray} alt="막걸리" />
-          
-          </button>
-            <p className={`alcoholName ${selectedTab === "막걸리" ? "active" : ""}`}>막걸리</p>
+            <button
+              className={`tabButton ${
+                selectedTab === "막걸리" ? "active" : ""
+              }`}
+              onClick={() => handleTabClick("막걸리")}
+            >
+              <img
+                className="orderImg"
+                src={selectedTab === "막걸리" ? makgeolli : makgeolliGray}
+                alt="막걸리"
+              />
+            </button>
+            <p
+              className={`alcoholName ${
+                selectedTab === "막걸리" ? "active" : ""
+              }`}
+            >
+              막걸리
+            </p>
           </div>
           <div className="tabName">
-          <button
-            className={`tabButton ${selectedTab === "양주" ? "active" : ""}`}
-            onClick={() => handleTabClick("양주")}
-          >
-            <img className="orderImg" src={selectedTab === "양주" ? liquor : liquorGray} alt="양주" />
-          </button>
-            <p className={`alcoholName ${selectedTab === "양주" ? "active" : ""}`}>양주</p>
+            <button
+              className={`tabButton ${selectedTab === "양주" ? "active" : ""}`}
+              onClick={() => handleTabClick("양주")}
+            >
+              <img
+                className="orderImg"
+                src={selectedTab === "양주" ? liquor : liquorGray}
+                alt="양주"
+              />
+            </button>
+            <p
+              className={`alcoholName ${
+                selectedTab === "양주" ? "active" : ""
+              }`}
+            >
+              양주
+            </p>
           </div>
           <div className="tabName">
-          <button
-            className={`tabButton ${selectedTab === "비고" ? "active" : ""}`}
-            onClick={() => handleTabClick("비고")}
-          >
-            비고
-          </button>
-            <p className={`alcoholName ${selectedTab === "비고" ? "active" : ""}`}>비고</p>
+            <button
+              className={`tabButton ${selectedTab === "비고" ? "active" : ""}`}
+              onClick={() => handleTabClick("비고")}
+            >
+              <FaPen size="45" color="white" />
+            </button>
+            <p
+              className={`alcoholName ${
+                selectedTab === "비고" ? "active" : ""
+              }`}
+            >
+              비고
+            </p>
           </div>
-          
         </div>
-        {/* ... (다른 탭들의 컨텐츠도 마찬가지로 추가) */}
         <div className="tabContent">
           {/* 선택된 탭에 따라 주류 종류 리스트 표시 */}
-          <ul>
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             {selectedTab === "소주" && (
               <>
-                <li>소주 종류 1</li>
-                <li>소주 종류 2</li>
-                {/* ... (소주 탭에 대한 주류 종류들 추가) */}
+                {drinks.map((drink) => (
+                  <div className="menuContain" key={drink.name}>
+                    <div style={{display: "flex"}}>
+                      <h3 style={{ fontSize: "45px" }}>{drink.name}</h3>
+                      <h3
+                        style={{
+                          fontSize: "45px",
+                          color: "#BDBDBD",
+                          marginLeft: 10,
+                          fontWeight: 500,
+                        }}
+                      >
+                        (0개)
+                      </h3>
+                    </div>
+
+                    <div className="quantityButtons">
+                      <button
+                        className="quantityButton"
+                        onClick={() => handleQuantityChange(drink.name, "-")}
+                      >
+                        -
+                      </button>
+                      <h3
+                        style={{
+                          fontSize: "45px",
+                          color: "#BDBDBD",
+                          margin: "0 10px",
+                          fontWeight: 500,
+                        }}
+                      >
+                        ({quantities[drink.name]})
+                      </h3>
+                      <button
+                        className="quantityButton"
+                        onClick={() => handleQuantityChange(drink.name, "+")}
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                ))}
               </>
             )}
             {selectedTab === "맥주" && (
               <>
                 <li>병맥주</li>
                 <li>생맥주</li>
-                {/* ... (맥주 탭에 대한 주류 종류들 추가) */}
               </>
             )}
             {/* ... (다른 탭들의 주류 종류 리스트도 마찬가지로 추가) */}
-          </ul>
+          </div>
         </div>
         {/* ... (다른 탭들의 컨텐츠도 마찬가지로 추가) */}
       </div>
