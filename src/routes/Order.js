@@ -13,6 +13,8 @@ import liquor from "../images/liquor.svg";
 import liquorGray from "../images/liquorGray.svg";
 import makgeolli from "../images/makgeolli.svg";
 import makgeolliGray from "../images/makgeolliGray.svg";
+import add from "../images/add.svg";
+import sub from "../images/sub.svg";
 
 const Order = () => {
   const [selectedDate, setSelectedDate] = useState(new Date()); // 선택한 날짜를 상태로 관리
@@ -23,13 +25,49 @@ const Order = () => {
     return `${year}.${month}.${day}`;
   };
   const [selectedTab, setSelectedTab] = useState("소주"); // 기본으로 소주 탭 선택
-
+  const [selectedBeerTab, setSelectedBeerTab] = useState("병맥주");
   const handleTabClick = (tab) => {
     setSelectedTab(tab);
   };
+  const handleBeerTabClick = (tab) => {
+    setSelectedBeerTab(tab);
+  };
 
   const [quantities, setQuantities] = useState({
-    후레쉬: 0, 클래식: 0, 매화수: 0, 진로이즈백: 0, 클래식18L: 0, 처음처럼: 0, 청하: 0, 이제우린: 0
+    후레쉬: 0,
+    클래식: 0,
+    매화수: 0,
+    진로이즈백: 0,
+    "클래식1.8L": 0,
+    처음처럼: 0,
+    청하: 0,
+    이제우린: 0,
+    스카치: 0,
+    발렌타인: 0,
+    골든블루: 0,
+    카스: 0,
+    맥스: 0,
+    테라: 0,
+    클라우드: 0,
+    카스330: 0,
+    카스500: 0,
+    버드330: 0,
+    카프리330: 0,
+    클라우드500: 0,
+    클라우드330: 0,
+    테라330: 0,
+    테라500: 0,
+    기네스: 0,
+    호가든: 0,
+    코로나: 0,
+    호가든: 0,
+    기네스D: 0,
+    하이네캔: 0,
+    산미구엘P: 0,
+    "칭따오(대)": 0,
+    백세주: 0,
+    쌀막걸리: 0,
+    복분자: 0,
   });
   const handleQuantityChange = (drink, operation) => {
     if (operation === "+") {
@@ -46,10 +84,49 @@ const Order = () => {
       }
     }
   };
-  const drinks = [
-    { name: "후레쉬" }, { name: "클래식" }, { name: "매화수" }, 
-    { name: "진로이즈백" }, { name: "클래식1.8L" }, { name: "처음처럼" },
-    { name: "청하" }, { name: "이제우린" },
+  const sojus = [
+    { name: "후레쉬" },
+    { name: "클래식" },
+    { name: "매화수" },
+    { name: "진로이즈백" },
+    { name: "클래식1.8L" },
+    { name: "처음처럼" },
+    { name: "청하" },
+    { name: "이제우린" },
+  ];
+  const beers1 = [
+    { name: "카스330" },
+    { name: "카스500" },
+    { name: "버드330" },
+    { name: "카프리330" },
+    { name: "클라우드330" },
+    { name: "클라우드500" },
+    { name: "테라330" },
+    { name: "테라500" },
+  ];
+  const beers2 = [
+    { name: "맥스" },
+    { name: "카스" },
+    { name: "클라우드" },
+    { name: "테라" },
+  ];
+  const beers3 = [
+    { name: "코로나" },
+    { name: "호가든" },
+    { name: "기네스D" },
+    { name: "하이네캔" },
+    { name: "산미구엘P" },
+    { name: "칭따오(대)" },
+  ];
+  const beers4 = [
+    { name: "기네스" },
+    { name: "호가든" },
+  ];
+
+  const liquors = [
+    { name: "스카치" },
+    { name: "발렌타인" },
+    { name: "골든블루" },
   ];
   return (
     <div style={{ width: "100%", height: "100vh", backgroundColor: "#DFDFDF" }}>
@@ -237,10 +314,12 @@ const Order = () => {
           >
             {selectedTab === "소주" && (
               <>
-                {drinks.map((drink) => (
+                {sojus.map((drink) => (
                   <div className="menuContain" key={drink.name}>
-                    <div style={{display: "flex"}}>
-                      <h3 style={{ fontSize: "45px" }}>{drink.name}</h3>
+                    <div style={{ display: "flex" }}>
+                      <h3 style={{ fontSize: "45px", fontWeight: 700 }}>
+                        {drink.name}
+                      </h3>
                       <h3
                         style={{
                           fontSize: "45px",
@@ -249,7 +328,7 @@ const Order = () => {
                           fontWeight: 500,
                         }}
                       >
-                        (0개)
+                        ({quantities[drink.name] * 30}개)
                       </h3>
                     </div>
 
@@ -258,23 +337,26 @@ const Order = () => {
                         className="quantityButton"
                         onClick={() => handleQuantityChange(drink.name, "-")}
                       >
-                        -
+                        <img className="countBtn" src={sub} alt="sub" />
                       </button>
                       <h3
                         style={{
-                          fontSize: "45px",
-                          color: "#BDBDBD",
+                          fontSize: "50px",
                           margin: "0 10px",
                           fontWeight: 500,
+                          color:
+                            quantities[drink.name] !== 0
+                              ? "#A5CC2B"
+                              : "#BDBDBD",
                         }}
                       >
-                        ({quantities[drink.name]})
+                        {quantities[drink.name]}
                       </h3>
                       <button
                         className="quantityButton"
                         onClick={() => handleQuantityChange(drink.name, "+")}
                       >
-                        +
+                        <img className="countBtn" src={add} alt="add" />
                       </button>
                     </div>
                   </div>
@@ -283,8 +365,339 @@ const Order = () => {
             )}
             {selectedTab === "맥주" && (
               <>
-                <li>병맥주</li>
-                <li>생맥주</li>
+                <div className="tabBeerButtons">
+                  <div className="tabBeerName">
+                    <button
+                      className={`tabBeerButton ${
+                        selectedBeerTab === "병맥주" ? "active" : ""
+                      }`}
+                      onClick={() => handleBeerTabClick("병맥주")}
+                    >
+                      병맥주
+                    </button>
+                    
+                  </div>
+                  <div className="tabBeerName">
+                    <button
+                      className={`tabBeerButton ${
+                        selectedBeerTab === "생맥주" ? "active" : ""
+                      }`}
+                      onClick={() => handleBeerTabClick("생맥주")}
+                    >
+                      생맥주
+                    </button>
+                    
+                  </div>
+                  <div className="tabBeerName">
+                    <button
+                      style={{width: 180}}
+                      className={`tabBeerButton ${
+                        selectedBeerTab === "수입맥주" ? "active" : ""
+                      }`}
+                      onClick={() => handleBeerTabClick("수입맥주")}
+                    >
+                      수입맥주
+                    </button>
+                  </div>
+                  <div className="tabBeerName">
+                    <button
+                      style={{width: 200}}
+                      className={`tabBeerButton ${
+                        selectedBeerTab === "수입생맥주" ? "active" : ""
+                      }`}
+                      onClick={() => handleBeerTabClick("수입생맥주")}
+                    >
+                      수입생맥주
+                    </button>
+                  </div>
+                  
+                </div>
+                <div className="tabContent">
+                  {/* 선택된 탭에 따라 주류 종류 리스트 표시 */}
+                  <div
+                    style={{
+                      width: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      marginTop: 50
+                    }}
+                  >
+                    {selectedBeerTab === "병맥주" && (
+                      <>
+                        {beers1.map((drink) => (
+                          <div className="menuContain" key={drink.name}>
+                            <div style={{ display: "flex" }}>
+                              <h3 style={{ fontSize: "45px", fontWeight: 700 }}>
+                                {drink.name}
+                              </h3>
+                              <h3
+                                style={{
+                                  fontSize: "45px",
+                                  color: "#BDBDBD",
+                                  marginLeft: 10,
+                                  fontWeight: 500,
+                                }}
+                              >
+                                ({quantities[drink.name] * 30}개)
+                              </h3>
+                            </div>
+
+                            <div className="quantityButtons">
+                              <button
+                                className="quantityButton"
+                                onClick={() =>
+                                  handleQuantityChange(drink.name, "-")
+                                }
+                              >
+                                <img className="countBtn" src={sub} alt="sub" />
+                              </button>
+                              <h3
+                                style={{
+                                  fontSize: "50px",
+                                  margin: "0 10px",
+                                  fontWeight: 500,
+                                  color:
+                                    quantities[drink.name] !== 0
+                                      ? "#A5CC2B"
+                                      : "#BDBDBD",
+                                }}
+                              >
+                                {quantities[drink.name]}
+                              </h3>
+                              <button
+                                className="quantityButton"
+                                onClick={() =>
+                                  handleQuantityChange(drink.name, "+")
+                                }
+                              >
+                                <img className="countBtn" src={add} alt="add" />
+                              </button>
+                            </div>
+                          </div>
+                        ))}
+                      </>
+                    )}
+                    {selectedBeerTab === "생맥주" && (
+                      <>
+                        {beers2.map((drink) => (
+                          <div className="menuContain" key={drink.name}>
+                            <div style={{ display: "flex" }}>
+                              <h3 style={{ fontSize: "45px", fontWeight: 700 }}>
+                                {drink.name}
+                              </h3>
+                              <h3
+                                style={{
+                                  fontSize: "45px",
+                                  color: "#BDBDBD",
+                                  marginLeft: 10,
+                                  fontWeight: 500,
+                                }}
+                              >
+                                ({quantities[drink.name] * 30}개)
+                              </h3>
+                            </div>
+
+                            <div className="quantityButtons">
+                              <button
+                                className="quantityButton"
+                                onClick={() =>
+                                  handleQuantityChange(drink.name, "-")
+                                }
+                              >
+                                <img className="countBtn" src={sub} alt="sub" />
+                              </button>
+                              <h3
+                                style={{
+                                  fontSize: "50px",
+                                  margin: "0 10px",
+                                  fontWeight: 500,
+                                  color:
+                                    quantities[drink.name] !== 0
+                                      ? "#A5CC2B"
+                                      : "#BDBDBD",
+                                }}
+                              >
+                                {quantities[drink.name]}
+                              </h3>
+                              <button
+                                className="quantityButton"
+                                onClick={() =>
+                                  handleQuantityChange(drink.name, "+")
+                                }
+                              >
+                                <img className="countBtn" src={add} alt="add" />
+                              </button>
+                            </div>
+                          </div>
+                        ))}
+                      </>
+                    )}
+                    {selectedBeerTab === "수입맥주" && (
+                      <>
+                        {beers3.map((drink) => (
+                          <div className="menuContain" key={drink.name}>
+                            <div style={{ display: "flex" }}>
+                              <h3 style={{ fontSize: "45px", fontWeight: 700 }}>
+                                {drink.name}
+                              </h3>
+                              <h3
+                                style={{
+                                  fontSize: "45px",
+                                  color: "#BDBDBD",
+                                  marginLeft: 10,
+                                  fontWeight: 500,
+                                }}
+                              >
+                                ({quantities[drink.name] * 30}개)
+                              </h3>
+                            </div>
+
+                            <div className="quantityButtons">
+                              <button
+                                className="quantityButton"
+                                onClick={() =>
+                                  handleQuantityChange(drink.name, "-")
+                                }
+                              >
+                                <img className="countBtn" src={sub} alt="sub" />
+                              </button>
+                              <h3
+                                style={{
+                                  fontSize: "50px",
+                                  margin: "0 10px",
+                                  fontWeight: 500,
+                                  color:
+                                    quantities[drink.name] !== 0
+                                      ? "#A5CC2B"
+                                      : "#BDBDBD",
+                                }}
+                              >
+                                {quantities[drink.name]}
+                              </h3>
+                              <button
+                                className="quantityButton"
+                                onClick={() =>
+                                  handleQuantityChange(drink.name, "+")
+                                }
+                              >
+                                <img className="countBtn" src={add} alt="add" />
+                              </button>
+                            </div>
+                          </div>
+                        ))}
+                      </>
+                    )}
+                    {selectedBeerTab === "수입생맥주" && (
+                      <>
+                        {beers4.map((drink) => (
+                          <div className="menuContain" key={drink.name}>
+                            <div style={{ display: "flex" }}>
+                              <h3 style={{ fontSize: "45px", fontWeight: 700 }}>
+                                {drink.name}
+                              </h3>
+                              <h3
+                                style={{
+                                  fontSize: "45px",
+                                  color: "#BDBDBD",
+                                  marginLeft: 10,
+                                  fontWeight: 500,
+                                }}
+                              >
+                                ({quantities[drink.name] * 30}개)
+                              </h3>
+                            </div>
+
+                            <div className="quantityButtons">
+                              <button
+                                className="quantityButton"
+                                onClick={() =>
+                                  handleQuantityChange(drink.name, "-")
+                                }
+                              >
+                                <img className="countBtn" src={sub} alt="sub" />
+                              </button>
+                              <h3
+                                style={{
+                                  fontSize: "50px",
+                                  margin: "0 10px",
+                                  fontWeight: 500,
+                                  color:
+                                    quantities[drink.name] !== 0
+                                      ? "#A5CC2B"
+                                      : "#BDBDBD",
+                                }}
+                              >
+                                {quantities[drink.name]}
+                              </h3>
+                              <button
+                                className="quantityButton"
+                                onClick={() =>
+                                  handleQuantityChange(drink.name, "+")
+                                }
+                              >
+                                <img className="countBtn" src={add} alt="add" />
+                              </button>
+                            </div>
+                          </div>
+                        ))}
+                      </>
+                    )}
+                    {/* ... (다른 탭들의 주류 종류 리스트도 마찬가지로 추가) */}
+                  </div>
+                </div>
+              </>
+            )}
+            {selectedTab === "양주" && (
+              <>
+                {liquors.map((drink) => (
+                  <div className="menuContain" key={drink.name}>
+                    <div style={{ display: "flex" }}>
+                      <h3 style={{ fontSize: "45px", fontWeight: 700 }}>
+                        {drink.name}
+                      </h3>
+                      <h3
+                        style={{
+                          fontSize: "45px",
+                          color: "#BDBDBD",
+                          marginLeft: 10,
+                          fontWeight: 500,
+                        }}
+                      >
+                        ({quantities[drink.name] * 30}개)
+                      </h3>
+                    </div>
+
+                    <div className="quantityButtons">
+                      <button
+                        className="quantityButton"
+                        onClick={() => handleQuantityChange(drink.name, "-")}
+                      >
+                        <img className="countBtn" src={sub} alt="sub" />
+                      </button>
+                      <h3
+                        style={{
+                          fontSize: "50px",
+                          margin: "0 10px",
+                          fontWeight: 500,
+                          color:
+                            quantities[drink.name] !== 0
+                              ? "#A5CC2B"
+                              : "#BDBDBD",
+                        }}
+                      >
+                        {quantities[drink.name]}
+                      </h3>
+                      <button
+                        className="quantityButton"
+                        onClick={() => handleQuantityChange(drink.name, "+")}
+                      >
+                        <img className="countBtn" src={add} alt="add" />
+                      </button>
+                    </div>
+                  </div>
+                ))}
               </>
             )}
             {/* ... (다른 탭들의 주류 종류 리스트도 마찬가지로 추가) */}
