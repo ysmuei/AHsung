@@ -18,13 +18,13 @@ const LoginForm = ( {placeholder} ) => {
     <>
       <form>
         <input
-          name="email"
-          type="email"
+          name="number"
+          type="number"
           placeholder={placeholder}
           required
           value={email}
           onChange={onChange}
-          className="loginInput"
+          className={`loginInput ${isFormValid ? "greenBorder" : ""}`}
         />
         <input
           name="password"
@@ -33,7 +33,7 @@ const LoginForm = ( {placeholder} ) => {
           required
           value={password}
           onChange={onChange}
-          className="loginInput"
+          className={`loginInput ${isFormValid ? "greenBorder" : ""}`}
         />
         <br/><br/><br/><br/>
         <input type="submit" className={`loginInput loginSubmit ${isFormValid ? "greenButton" : ""}`} value="로그인" />

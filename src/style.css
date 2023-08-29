@@ -1,8 +1,12 @@
 
 * {
     box-sizing: border-box;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   }
-  
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+
+
 input {
   all: unset;
   box-sizing: border-box;
@@ -39,6 +43,7 @@ form {
   border-radius: 30px;
   word-wrap: break-word;
   border-width: 0;
+  box-shadow: 2px 6px 9px -1px rgba(0, 0, 0, 0.10);
 }
 .basic_btn.clicked {
   background: #A5CC2B;
@@ -61,21 +66,30 @@ form {
   font-size: 40px;
   margin-bottom: 30px;
   border-radius: 35px;
+  font-weight: 700;
+  color: #383838;
   border: 5px solid #DFDFDF;
-  color: black;
+}
+
+input::placeholder {
+  color: #DFDFDF;
 }
 
 .loginSubmit {
   background: #DFDFDF;
-  color: #6F6F6F;
+  color: #ffffff;
   text-align: center;
   margin-top: 10;
   cursor: pointer;
+  box-shadow: 0px 17px 30px 0px rgba(0, 0, 0, 0.05);
 }
 
 .greenButton {
   background: #A5CC2B;
   color: #F6F6F6;
+}
+.greenBorder{
+  border: 5px solid #A5CC2B;
 }
 
 /* ProfileForm */
@@ -88,6 +102,7 @@ form {
   background-color: white;
   border-end-end-radius: 10%;
   border-end-start-radius: 10%;
+  box-shadow: 0px 17px 30px 0px rgba(0, 0, 0, 0.05);
 }
 
 .header {
@@ -107,11 +122,12 @@ form {
 }
 
 .orderBtn {
-  width: 90%;
+  width: 94%;
+  height: 130px;
   background-color: #587302;
   color: white;
-  font-size: 40px;
-  font-weight: 600;
+  font-size: 45px;
+  font-weight: 400;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,23 +163,29 @@ form {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 20px;
+  margin: 16px;
 }
 
 .tabBeerButton{
   width: 150px;
-  height: 70px;
-  font-weight: 700;
-  font-size: 30px;
+  height: 74px;
+  font-weight: 500;
+  font-size: 36px;
   align-items: center;
   justify-content: center;
   display: flex;
-  border-radius: 10px;
-  background-color: #DFDFDF;
+  border-radius: 12px;
+  background-color: #F8F8F8;
   color: #BDBDBD;
+  border-color: #BDBDBD;
+  border-width: 3px;
+  border-style:solid;
 }
 .tabBeerButton.active {
   background-color: #88B00C; /* 선택된 탭의 배경색 */
+  color: white;
+  font-weight: 700;
+  border-width: 0;
 }
 .tabName{
   display: flex;
@@ -190,8 +212,9 @@ form {
 
 .alcoholName {
   font-size: 30px;
-  font-weight: 700;
+  font-weight: 500;
   margin-top: 10px;
+  color: #BDBDBD;
 }
 .alcoholName.active{
   color: #88B00C;;
@@ -215,8 +238,9 @@ form {
   align-items: center;
   background-color: white;
   padding: 50px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   border-radius: 30px;
+  box-shadow: 0px 17px 30px 0px rgba(0, 0, 0, 0.05);
 }
 
 .quantityButtons{
@@ -243,12 +267,37 @@ form {
   justify-items: center;
   color: #383838;
 }
+
+/* OrderEnd */
+.orderEnd {
+  background-color: white;
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 40px;
+  box-shadow: 0px 17px 30px 0px rgba(0, 0, 0, 0.05);
+  
+}
+/* OrderContent */
+.orderContent{
+  width: 90%;
+  height: 240px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 24px;
+  box-shadow: 0px 17px 30px 0px rgba(0, 0, 0, 0.05);
+}
+
 /* ManagerHome */
 
 .manager {
   flex-direction: column;
   display: flex;
-  justify-content: center;
+  justify-content: censter;
   align-items: center;
 }
 
@@ -264,11 +313,6 @@ form {
   justify-content: center;
   align-items: center;
 }
-
-
-
-
-
 
 
 .example-custom-input {

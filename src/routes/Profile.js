@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import logo from "../images/logo.svg";
+
 const Profile = ( {name} ) => {
     const [currentDate, setCurrentDate] = useState(new Date());
   useEffect(() => {
@@ -32,7 +33,7 @@ const Profile = ( {name} ) => {
             padding: "30px",
           }}
         >
-          <p style={{ fontSize: "4.5vw", marginTop: "8vw", fontWeight: "600" }}>
+          <p style={{ fontSize: "4.5vw", marginTop: "8vw", fontWeight: "500", color: "#383838" }}>
             {currentDate.toLocaleDateString("ko-KR", {
               month: "long",
               day: "numeric",
@@ -44,6 +45,7 @@ const Profile = ( {name} ) => {
               fontSize: "8vw",
               margin: 0,
               fontWeight: 500,
+              color: '#383838',
               wordWrap: "break-word",
             }}
           >

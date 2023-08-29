@@ -23,7 +23,7 @@ const ManagerHome = () => {
     setSelectedOption(option);
   };
   return (
-    <div style={{ width: "100%", height: "100vh", backgroundColor: "#DFDFDF" }}>
+    <div style={{ width: "100%", height: "100vh", backgroundColor: "#F8F8F8" }}>
       <Profile name={name} />
       <div className="manager">
         <div className="dropDown">

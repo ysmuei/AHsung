@@ -129,16 +129,16 @@ const Order = () => {
     { name: "골든블루" },
   ];
   return (
-    <div style={{ width: "100%", height: "100vh", backgroundColor: "#DFDFDF" }}>
+    <div style={{ width: "100%", height: "100vh", backgroundColor: "#F8F8F8" }}>
       <div className="profilForm" style={{ height: "30%" }}>
         <header className="header">
           <Link to="/FranchHome" state={{ backgroundColor: "black" }}>
             <FaChevronLeft
-              size="70"
-              style={{ position: "absolute", left: 50, top: 50 }}
+              size="55"
+              style={{ position: "absolute", left: 60, top: 60, color: "#555555" }}
             />
           </Link>
-          <p style={{ fontSize: "45px", fontWeight: "600" }}>발주하기</p>
+          <p style={{ fontSize: "45px", fontWeight: "700", color: "#555555" }}>발주하기</p>
         </header>
         <div
           style={{
@@ -154,19 +154,21 @@ const Order = () => {
             style={{
               fontSize: "40px",
               fontWeight: 500,
+              color: "#555",
               margin: 0,
               marginBottom: 30,
             }}
           >
             배송지
           </p>
-          <h3 style={{ fontSize: 50, marginTop: -10, fontWeight: 900 }}>
+          <h3 style={{ fontSize: 50, marginTop: -10, fontWeight: 700 }}>
             유빈이네 닭갈비
           </h3>
           <p
             style={{
               fontSize: "40px",
               fontWeight: 500,
+              color: "#555",
               margin: 0,
               marginTop: 20,
               marginBottom: 20,
@@ -187,7 +189,7 @@ const Order = () => {
                   value={formatDate(selectedDate)}
                   style={{
                     width: "350px",
-                    fontSize: "60px",
+                    fontSize: "58px",
                     fontWeight: 700,
                     color: "#A5CC2B",
                     border: "none",
@@ -195,7 +197,7 @@ const Order = () => {
                     outline: "none",
                   }}
                 />
-                <FaPen size="45" />
+                <FaPen size="42" />
               </div>
             }
             withPortal
@@ -316,13 +318,13 @@ const Order = () => {
               <>
                 {sojus.map((drink) => (
                   <div className="menuContain" key={drink.name}>
-                    <div style={{ display: "flex" }}>
+                    <div style={{ display: "flex", justifyContent: "center", alignItems: 'center' }}>
                       <h3 style={{ fontSize: "45px", fontWeight: 700 }}>
                         {drink.name}
                       </h3>
                       <h3
                         style={{
-                          fontSize: "45px",
+                          fontSize: "40px",
                           color: "#BDBDBD",
                           marginLeft: 10,
                           fontWeight: 500,
@@ -718,7 +720,7 @@ const Order = () => {
       >
         <button
           className="basic_btn"
-          style={{ backgroundColor: "#587302", fontWeight: 500 }}
+          style={{ backgroundColor: "#587302", fontWeight: 500}}
         >
           주문하기
         </button>
