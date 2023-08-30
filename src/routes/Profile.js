@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import logo from "../images/logo.svg";
 
-const Profile = ( {name} ) => {
-    const [currentDate, setCurrentDate] = useState(new Date());
+const Profile = ({ userObj }) => {
+  const [currentDate, setCurrentDate] = useState(new Date());
+  const companyName = userObj.companyName;
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentDate(new Date());
@@ -49,7 +50,7 @@ const Profile = ( {name} ) => {
               wordWrap: "break-word",
             }}
           >
-            <span style={{ color: "#A5CC2B", fontWeight: 700 }}>{name}</span>
+            <span style={{ color: "#A5CC2B", fontWeight: 700 }}>{companyName}</span>
             님<br />
             안녕하세요
           </h3>

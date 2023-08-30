@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaChevronLeft } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css"; // 달력 스타일을 위한 CSS import
 import { ko } from "date-fns/esm/locale";
@@ -16,7 +16,8 @@ import makgeolliGray from "../images/makgeolliGray.svg";
 import add from "../images/add.svg";
 import sub from "../images/sub.svg";
 
-const Order = () => {
+const Order = ({ userObj }) => {
+  const navigate = useNavigate();
   const [selectedDate, setSelectedDate] = useState(new Date()); // 선택한 날짜를 상태로 관리
   const formatDate = (date) => {
     const year = date.getFullYear();
@@ -57,8 +58,8 @@ const Order = () => {
     클라우드330: 0,
     테라330: 0,
     테라500: 0,
-    기네스: 0,
-    호가든: 0,
+    "기네스(생)": 0,
+    "호가든(생)": 0,
     코로나: 0,
     호가든: 0,
     기네스D: 0,
@@ -68,6 +69,7 @@ const Order = () => {
     백세주: 0,
     쌀막걸리: 0,
     복분자: 0,
+    탄산가스: 0,
   });
   const handleQuantityChange = (drink, operation) => {
     if (operation === "+") {
@@ -119,14 +121,21 @@ const Order = () => {
     { name: "칭따오(대)" },
   ];
   const beers4 = [
-    { name: "기네스" },
-    { name: "호가든" },
+    { name: "기네스(생)" },
+    { name: "호가든(생)" },
   ];
 
   const liquors = [
     { name: "스카치" },
     { name: "발렌타인" },
     { name: "골든블루" },
+  ];
+
+  const otherAlcohol = [
+    { name: "쌀막걸리" },
+    { name: "백세주" },
+    { name: "복분자" },
+    { name: "탄산가스" },
   ];
   return (
     <div style={{ width: "100%", height: "100vh", backgroundColor: "#F8F8F8" }}>
@@ -162,7 +171,7 @@ const Order = () => {
             배송지
           </p>
           <h3 style={{ fontSize: 50, marginTop: -10, fontWeight: 700 }}>
-            유빈이네 닭갈비
+            {userObj.companyName}
           </h3>
           <p
             style={{
@@ -249,27 +258,6 @@ const Order = () => {
           </div>
           <div className="tabName">
             <button
-              className={`tabButton ${
-                selectedTab === "막걸리" ? "active" : ""
-              }`}
-              onClick={() => handleTabClick("막걸리")}
-            >
-              <img
-                className="orderImg"
-                src={selectedTab === "막걸리" ? makgeolli : makgeolliGray}
-                alt="막걸리"
-              />
-            </button>
-            <p
-              className={`alcoholName ${
-                selectedTab === "막걸리" ? "active" : ""
-              }`}
-            >
-              막걸리
-            </p>
-          </div>
-          <div className="tabName">
-            <button
               className={`tabButton ${selectedTab === "양주" ? "active" : ""}`}
               onClick={() => handleTabClick("양주")}
             >
@@ -287,6 +275,28 @@ const Order = () => {
               양주
             </p>
           </div>
+          <div className="tabName">
+            <button
+              className={`tabButton ${
+                selectedTab === "기타" ? "active" : ""
+              }`}
+              onClick={() => handleTabClick("기타")}
+            >
+              <img
+                className="orderImg"
+                src={selectedTab === "기타" ? makgeolli : makgeolliGray}
+                alt="막걸리"
+              />
+            </button>
+            <p
+              className={`alcoholName ${
+                selectedTab === "기타" ? "active" : ""
+              }`}
+            >
+              기타
+            </p>
+          </div>
+          
           <div className="tabName">
             <button
               className={`tabButton ${selectedTab === "비고" ? "active" : ""}`}
@@ -702,29 +712,83 @@ const Order = () => {
                 ))}
               </>
             )}
+            {selectedTab === "기타" && (
+              <>
+                {otherAlcohol.map((drink) => (
+                  <div className="menuContain" key={drink.name}>
+                    <div style={{ display: "flex" }}>
+                      <h3 style={{ fontSize: "45px", fontWeight: 700 }}>
+                        {drink.name}
+                      </h3>
+                      <h3
+                        style={{
+                          fontSize: "45px",
+                          color: "#BDBDBD",
+                          marginLeft: 10,
+                          fontWeight: 500,
+                        }}
+                      >
+                        ({quantities[drink.name] * 30}개)
+                      </h3>
+                    </div>
+
+                    <div className="quantityButtons">
+                      <button
+                        className="quantityButton"
+                        onClick={() => handleQuantityChange(drink.name, "-")}
+                      >
+                        <img className="countBtn" src={sub} alt="sub" />
+                      </button>
+                      <h3
+                        style={{
+                          fontSize: "50px",
+                          margin: "0 10px",
+                          fontWeight: 500,
+                          color:
+                            quantities[drink.name] !== 0
+                              ? "#A5CC2B"
+                              : "#BDBDBD",
+                        }}
+                      >
+                        {quantities[drink.name]}
+                      </h3>
+                      <button
+                        className="quantityButton"
+                        onClick={() => handleQuantityChange(drink.name, "+")}
+                      >
+                        <img className="countBtn" src={add} alt="add" />
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </>
+            )}
             {/* ... (다른 탭들의 주류 종류 리스트도 마찬가지로 추가) */}
           </div>
         </div>
         {/* ... (다른 탭들의 컨텐츠도 마찬가지로 추가) */}
       </div>
 
-      <Link
-        to="/OrderCheck"
+      <button
+        className="basic_btn"
         style={{
-          display: "flex",
-          justifyContent: "center",
+          backgroundColor: "#587302",
+          fontWeight: 500,
           position: "absolute",
           width: "100%",
           bottom: 100,
         }}
+        onClick={() =>
+          navigate('/OrderCheck', {
+            state: {
+              selectedDate: selectedDate,
+              quantities: quantities
+            }
+          })
+        }
       >
-        <button
-          className="basic_btn"
-          style={{ backgroundColor: "#587302", fontWeight: 500}}
-        >
-          주문하기
-        </button>
-      </Link>
+        주문하기
+      </button>
     </div>
   );
 };

@@ -9,7 +9,7 @@ import ManagerHome from "routes/ManagerHome";
 import OrderCheck from "routes/OrderCheck";
 import OrderEnd from "routes/OrderEnd";
 import OrderContent from "routes/OrderContent";
-const AppRouter = () => {
+const AppRouter = ({ userObj }) => {
   return (
     <BrowserRouter>
       <div
@@ -25,10 +25,10 @@ const AppRouter = () => {
           <Route path="/" element={<Splash />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/ManagerLogin" element={<ManagerLogin />} />
-          <Route path="/FranchHome" element={<FranchHome />} />
+          <Route path="/FranchHome" element={<FranchHome userObj={userObj}/>} />
           <Route path="/ManagerHome" element={<ManagerHome />} />
-          <Route path="/Order" element={<Order  />} />
-          <Route path="/OrderCheck" element={<OrderCheck  />} />
+          <Route path="/Order" element={<Order userObj={userObj}/>} />
+          <Route path="/OrderCheck" element={<OrderCheck userObj={userObj}/>} />
           <Route path="/OrderEnd" element={<OrderEnd  />} />
           <Route path="/OrderContent" element={<OrderContent  />} />
         </Routes>

@@ -8,7 +8,7 @@ const LoginForm = ( {placeholder} ) => {
     const {
       target: { name, value },
     } = event;
-    if (name === "email") {
+    if (name === "code") {
       setEmail(value);
     } else if (name === "password") {
       setPassword(value);
@@ -18,7 +18,7 @@ const LoginForm = ( {placeholder} ) => {
     <>
       <form>
         <input
-          name="number"
+          name="code"
           type="number"
           placeholder={placeholder}
           required
