@@ -138,7 +138,7 @@ const Order = ({ userObj }) => {
     { name: "탄산가스" },
   ];
   return (
-    <div style={{ width: "100%", height: "100vh", backgroundColor: "#F8F8F8" }}>
+    <div style={{ width: "100%", height: "100vh", backgroundColor: "#F8F8F8", display: 'flex', flexDirection: 'column', alignItems : 'center' }}>
       <div className="profilForm" style={{ height: "30%" }}>
         <header className="header">
           <Link to="/FranchHome" state={{ backgroundColor: "black" }}>
@@ -775,7 +775,7 @@ const Order = ({ userObj }) => {
           backgroundColor: "#587302",
           fontWeight: 500,
           position: "absolute",
-          width: "100%",
+          width: "90%",
           bottom: 100,
         }}
         onClick={() =>

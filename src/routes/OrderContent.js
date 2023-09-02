@@ -9,12 +9,7 @@ import { RiCalendar2Fill } from "react-icons/ri";
 const OrderContent = () => {
   const [dateRange, setDateRange] = useState([new Date(), new Date()]);
   const [startDate, endDate] = dateRange;
-  // const formatDate = (date) => {
-  //   const year = date.getFullYear();
-  //   const month = String(date.getMonth() + 1).padStart(2, "0");
-  //   const day = String(date.getDate()).padStart(2, "0");
-  //   return `${year}.${month}.${day}`;
-  // };
+
   return (
     <div style={{ width: "100%", height: "100vh", backgroundColor: "#F8F8F8" }}>
       <div className="profilForm" style={{ height: 400 }}>
@@ -76,7 +71,7 @@ const OrderContent = () => {
         </Link>
 
         <Link
-          to="/OrderCheck"
+          to="/OrderDetail"
           style={{ display: "flex", justifyContent: "center", marginTop: 60 }}
         >
           <div className="orderContent">

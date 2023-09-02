@@ -18,11 +18,7 @@ const OrderEnd = () => {
     return `${year}.${month}.${day}`;
   };
   const currentDate = formatDate(new Date());
-  console.log(currentDate)
-  if (quantities) {
-    console.log("Quantities:", quantities);
-    console.log("deliveryDate", deliveryDate);
-  }
+  
 
   return (
     <div

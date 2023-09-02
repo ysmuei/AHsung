@@ -9,6 +9,7 @@ import ManagerHome from "routes/ManagerHome";
 import OrderCheck from "routes/OrderCheck";
 import OrderEnd from "routes/OrderEnd";
 import OrderContent from "routes/OrderContent";
+import OrderDetail from "routes/OrderDetail";
 const AppRouter = ({ userObj }) => {
   return (
     <BrowserRouter>
@@ -31,6 +32,7 @@ const AppRouter = ({ userObj }) => {
           <Route path="/OrderCheck" element={<OrderCheck userObj={userObj}/>} />
           <Route path="/OrderEnd" element={<OrderEnd  />} />
           <Route path="/OrderContent" element={<OrderContent  />} />
+          <Route path="/OrderDetail" element={<OrderDetail />} />
         </Routes>
 
       </div>

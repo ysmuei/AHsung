@@ -1,5 +1,6 @@
 import React from "react";
 import AppRouter from "./Router";
+import Modal from 'react-modal';
 
 const data = {
     code: 1004,
@@ -10,12 +11,13 @@ const data = {
     representativeResidentNumber: "010721-4******",
     phoneNumber: "041-573-6337",
     postalCode: "331-090",
-    address: "충남 천안시 동남구 성명대길 31",
+    address: "충남 천안시 동남구 상명대길 31",
     representativeCellNumber: "010-1234-5678",
   };
 
 
 function App() {
+  Modal.setAppElement('#root');
   return (
     <AppRouter userObj={data}/>
   );
