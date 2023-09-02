@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AppRouter from "./Router";
 import Modal from 'react-modal';
 
@@ -15,9 +15,17 @@ const data = {
     representativeCellNumber: "010-1234-5678",
   };
 
+  // height: calc(var(--vh, 1vh) * 100);
 
 function App() {
   Modal.setAppElement('#root');
+  function setScreenSize() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  }
+  useEffect(() => {
+    setScreenSize();
+  });
   return (
     <AppRouter userObj={data}/>
   );

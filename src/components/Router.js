@@ -27,7 +27,7 @@ const AppRouter = ({ userObj }) => {
           <Route path="/Login" element={<Login />} />
           <Route path="/ManagerLogin" element={<ManagerLogin />} />
           <Route path="/FranchHome" element={<FranchHome userObj={userObj}/>} />
-          <Route path="/ManagerHome" element={<ManagerHome />} />
+          <Route path="/ManagerHome" element={<ManagerHome userObj={userObj}/>} />
           <Route path="/Order" element={<Order userObj={userObj}/>} />
           <Route path="/OrderCheck" element={<OrderCheck userObj={userObj}/>} />
           <Route path="/OrderEnd" element={<OrderEnd  />} />
