@@ -45,20 +45,20 @@ const OrderCheck = ({ userObj }) => {
   };
 
   return (
-    <div className="container" style={{ height: "100vh" }}>
+    <div className="container">
       <header className="header">
         <Link to="/Order" style={{ backgroundColor: "black" }}>
           <FaChevronLeft
-            size="55"
+            size="16"
             style={{
               position: "absolute",
-              left: 60,
-              top: 60,
+              left: 25,
+              top: 25,
               color: "#383838",
             }}
           />
         </Link>
-        <p style={{ fontSize: "45px", fontWeight: "600", color: "#383838" }}>
+        <p style={{ fontSize: "16px", fontWeight: "700", color: "#555555" }}>
           발주확인
         </p>
       </header>
@@ -68,28 +68,27 @@ const OrderCheck = ({ userObj }) => {
           height: "100vh",
         }}
       >
-        <h2 style={{ fontSize: 55, fontWeight: 700 }}>배송지</h2>
-        <p style={{ fontSize: "40px", fontWeight: 700, color: "#555" }}>
+        <h2 style={{ fontSize: "22px", fontWeight: 700 }}>배송지</h2>
+        <p style={{ fontSize: "18px", fontWeight: 700, color: "#555", margin: "0px" }}>
           {userObj.companyName}
         </p>
-        <p style={{ fontSize: "40px", marginTop: -24, color: "#BDBDBD" }}>
+        <p style={{ fontSize: "16px", color: "#BDBDBD" }}>
           {userObj.address}
         </p>
         <hr />
-        <h2 style={{ fontSize: 55, fontWeight: 700 }}>납기요청일</h2>
+        <h2 style={{ fontSize: "22px", fontWeight: 700 }}>납기요청일</h2>
         <p
           style={{
-            fontSize: "40px",
-            marginTop: -20,
+            fontSize: "18px",
             color: "#555",
             fontWeight: 500,
           }}
         >
           {date} 까지
         </p>
-        <hr style={{ marginBottom: 50 }} />
+        <hr/>
         <div>
-          <h2 style={{ fontSize: 55, fontWeight: 700 }}>주문 내역</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700 }}>주문 내역</h2>
           <div>
             {quantities &&
               Object.entries(quantities).map(([drinkName, quantity]) => {
@@ -102,13 +101,13 @@ const OrderCheck = ({ userObj }) => {
                         flexDirection: "row",
                         display: "flex",
                         justifyContent: "space-between",
-                        marginBottom: 20,
+                        marginBottom: "14px"
                       }}
                     >
-                      <p style={{ fontSize: "40px", margin: 0, color: "#555" }}>
+                      <p style={{ fontSize: "16px", margin: 0, color: "#555" }}>
                         {drinkName}
                       </p>
-                      <p style={{ fontSize: "40px", margin: 0, color: "#555" }}>
+                      <p style={{ fontSize: "16px", margin: 0, color: "#555" }}>
                         {quantity}({quantity * 30})개
                       </p>
                     </div>
@@ -128,7 +127,7 @@ const OrderCheck = ({ userObj }) => {
           >
             <p
               style={{
-                fontSize: 45,
+                fontSize: 18,
                 color: "#88B00C",
                 marginBottom: "15%",
                 fontWeight: 700,
@@ -136,7 +135,7 @@ const OrderCheck = ({ userObj }) => {
             >
               총 주문수량
             </p>
-            <p style={{ fontSize: 45, color: "#88B00C", fontWeight: 700 }}>
+            <p style={{ fontSize: 18, color: "#88B00C", fontWeight: 700 }}>
               {totalQuantity} ({totalQuantity * 30}개)
             </p>
           </div>

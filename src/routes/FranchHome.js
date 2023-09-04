@@ -6,7 +6,7 @@ import Profile from "./Profile";
 
 const FranchHome = ({ userObj }) => {
   return (
-    <div style={{ width: "100%", height: "100vh", backgroundColor: "#F8F8F8", display: "flex", flexDirection: "column", alignItems: 'center' }}>
+    <div className="franchHome">
       <Profile userObj={userObj} />
       <div className="order">
         <Link
@@ -19,7 +19,7 @@ const FranchHome = ({ userObj }) => {
           }}
         >
           <button className="basic_btn orderBtn">
-            <FaFileAlt size="65" style={{ marginRight: "12px" }} />
+            <FaFileAlt size="24" style={{ marginRight: "8%" }} />
             발주하기
           </button>
         </Link>
@@ -33,7 +33,7 @@ const FranchHome = ({ userObj }) => {
           }}
         >
           <button className="basic_btn orderBtn">
-            <FaBoxArchive size="65" style={{ marginRight: "12px" }} />
+            <FaBoxArchive size="24" style={{ marginRight: "8%" }} />
             발주내역
           </button>
         </Link>

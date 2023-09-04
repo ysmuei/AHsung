@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import AppRouter from "./Router";
 import Modal from 'react-modal';
-
+// https://nykim.work/85
 const data = {
     code: 1004,
     companyName: "유빈이네 닭갈비유",
@@ -18,6 +18,7 @@ const data = {
   // height: calc(var(--vh, 1vh) * 100);
 
 function App() {
+  
   Modal.setAppElement('#root');
   function setScreenSize() {
     let vh = window.innerHeight * 0.01;

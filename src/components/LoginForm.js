@@ -16,10 +16,11 @@ const LoginForm = ( {placeholder} ) => {
   };
   return (
     <>
-      <form>
+      <form style={{display: 'flex', flexDirection: "column", alignItems: 'center'}}>
         <input
           name="code"
           type="number"
+          inputMode="numeric"
           placeholder={placeholder}
           required
           value={email}
@@ -29,13 +30,13 @@ const LoginForm = ( {placeholder} ) => {
         <input
           name="password"
           type="password"
+          inputMode="numeric"
           placeholder="비밀번호"
           required
           value={password}
           onChange={onChange}
           className={`loginInput ${isFormValid ? "greenBorder" : ""}`}
         />
-        <br/><br/><br/><br/>
         <input type="submit" className={`loginInput loginSubmit ${isFormValid ? "greenButton" : ""}`} value="로그인" />
       </form>
     </>

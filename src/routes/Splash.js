@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <div className="container">
       <Link to="/ManagerLogin" style={{ marginBottom: "70%", marginTop: "40%" }}>
-        <img src={logo} alt="아성주류발주어플" style={{ width: "470px" }} />
+        <img src={logo} alt="아성주류발주어플" style={{ width: "100%" }} />
       </Link>
       <Link to="/Login" style={{width: "100%", display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
         <button
