@@ -20,7 +20,7 @@ const Profile = ({ userObj }) => {
           alt="로고"
           style={{
             width: "26%",
-            marginTop: "5%",
+            marginTop: "4%",
           }}
         />
       </header>
@@ -30,7 +30,6 @@ const Profile = ({ userObj }) => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          padding: "4%",
         }}
       >
         <p
@@ -51,7 +50,8 @@ const Profile = ({ userObj }) => {
         <h3
           style={{
             fontSize: "24px",
-            marginBottom: "46px",
+            marginTop: "4%",
+            marginBottom: "16%",
             fontWeight: 500,
             color: "#383838",
             wordWrap: "break-word",

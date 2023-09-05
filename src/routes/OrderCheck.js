@@ -46,8 +46,8 @@ const OrderCheck = ({ userObj }) => {
 
   return (
     <div className="container">
-      <header className="header">
-        <Link to="/Order" style={{ backgroundColor: "black" }}>
+      <header>
+        <Link to="/Order">
           <FaChevronLeft
             size="16"
             style={{
@@ -64,24 +64,26 @@ const OrderCheck = ({ userObj }) => {
       </header>
       <div
         style={{
-          width: "90%",
+          width: "100%",
           height: "100vh",
+          padding: "0% 4%"
         }}
       >
         <h2 style={{ fontSize: "22px", fontWeight: 700 }}>배송지</h2>
         <p style={{ fontSize: "18px", fontWeight: 700, color: "#555", margin: "0px" }}>
           {userObj.companyName}
         </p>
-        <p style={{ fontSize: "16px", color: "#BDBDBD" }}>
+        <p style={{ fontSize: "16px", color: "#BDBDBD", marginTop: "2%", marginBottom: "6%" }}>
           {userObj.address}
         </p>
         <hr />
-        <h2 style={{ fontSize: "22px", fontWeight: 700 }}>납기요청일</h2>
+        <h2 style={{ fontSize: "22px", fontWeight: 700, marginTop: "6%", marginBottom: "0%" }}>납기요청일</h2>
         <p
           style={{
             fontSize: "18px",
             color: "#555",
             fontWeight: 500,
+            margin: "5% 0%"
           }}
         >
           {date} 까지
@@ -169,16 +171,16 @@ const OrderCheck = ({ userObj }) => {
           onRequestClose={closeModal}
           contentLabel="주문 확인"
         >
-          <h2 style={{fontSize: 60}}>주문하시겠습니까?</h2>
-          <button className="basic_btn modalBtn" style={{backgroundColor: '#BDBDBD', marginTop: 30, width: 600}} onClick={handleConfirmOrder}>주문하기</button>
+          <h2 style={{fontSize: 20}}>주문하시겠습니까?</h2>
+          <button className="basic_btn modalBtn" onClick={handleConfirmOrder}>주문하기</button>
           
             <MdClose
               onClick={closeModal}
-              size="65"
+              size="34"
               style={{
                 position: "absolute",
-                right: 50,
-                top: 60,
+                right: 10,
+                top: 10,
                 color: "#383838",
               }}
             />

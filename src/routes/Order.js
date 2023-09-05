@@ -136,7 +136,7 @@ const Order = ({ userObj }) => {
   ];
   return (
     <div className="orderContain">
-      <header className="header" style={{ backgroundColor: "white" }}>
+      <header className="header">
         <Link to="/FranchHome">
           <FaChevronLeft
             size="16"
@@ -157,7 +157,7 @@ const Order = ({ userObj }) => {
           style={{
             width: "100%", // 높이를 자동 조절
             display: "flex",
-            paddingBottom: "35px",
+            paddingBottom: "10%",
             flexDirection: "column",
             justifyContent: "center",
           }}
@@ -165,6 +165,8 @@ const Order = ({ userObj }) => {
           <p
             style={{
               fontSize: "16px",
+              marginTop: "4%",
+              marginBottom: "3%",
               fontWeight: 500,
               color: "#555"
             }}
@@ -179,8 +181,8 @@ const Order = ({ userObj }) => {
               fontSize: "16px",
               fontWeight: 500,
               color: "#555",
-              marginTop: "5%",
-              marginBottom: "4%",
+              marginTop: "4%",
+              marginBottom: "3%",
             }}
           >
             납기요청일

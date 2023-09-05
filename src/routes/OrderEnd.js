@@ -10,7 +10,7 @@ const OrderEnd = () => {
   const deliveryDate = state ? state.date : null;
   const quantities = state ? state.quantities : null;
   const totalQuantity = state ? state.totalQuantity : null;
-  
+
   const formatDate = (date) => {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, "0");
@@ -18,38 +18,30 @@ const OrderEnd = () => {
     return `${year}.${month}.${day}`;
   };
   const currentDate = formatDate(new Date());
-  
 
   return (
-    <div
-      className="container"
-      style={{
-        backgroundColor: "#F8F8F8",
-        height: "100vh",
-        justifyContent: "start",
-      }}
-    >
+    <div className="container" >
       <div className="orderEnd">
-        <header className="header" style={{ height: 120 }}>
-          <Link to="/FranchHome" state={{}}>
+        <header className="header" style={{ height: "8%" }}>
+          <Link to="/FranchHome">
             <MdClose
-              size="65"
+              size="26px"
               style={{
                 position: "absolute",
-                left: 50,
-                top: 60,
+                left: 25,
+                top: 25,
                 color: "#383838",
               }}
             />
           </Link>
         </header>
-        <p style={{ fontSize: "70px", fontWeight: "700" }}>
+        <p style={{ fontSize: "24px", fontWeight: "700" }}>
           주문이 <br />
           완료 되었습니다!
         </p>
         <p
           style={{
-            fontSize: "40px",
+            fontSize: "16px",
             fontWeight: "500",
             margin: 0,
             color: "#555",
@@ -59,9 +51,9 @@ const OrderEnd = () => {
         </p>
         <p
           style={{
-            fontSize: "40px",
+            fontSize: "16px",
             fontWeight: "500",
-            marginTop: 20,
+            marginTop: 5,
             color: "#555",
           }}
         >
@@ -74,14 +66,19 @@ const OrderEnd = () => {
         >
           <button
             className="basic_btn"
-            style={{ backgroundColor: "#587302", fontWeight: 500, margin: 24 }}
+            style={{
+              width: "100%",
+              backgroundColor: "#587302",
+              fontWeight: 500,
+              margin: "5% 0%",
+            }}
           >
             발주내역 보러가기
           </button>
         </Link>
 
         <div>
-          <p style={{ fontSize: "50px", fontWeight: "700" }}>주문 내역</p>
+          <p style={{ fontSize: "22px", fontWeight: "700" }}>주문 내역</p>
           <div>
             {Object.entries(quantities).map(([drinkName, quantity]) => {
               if (quantity > 0) {
@@ -93,13 +90,13 @@ const OrderEnd = () => {
                       flexDirection: "row",
                       display: "flex",
                       justifyContent: "space-between",
-                      marginBottom: 20,
+                      marginBottom: 10,
                     }}
                   >
-                    <p style={{ fontSize: "40px", margin: 0, color: "#555" }}>
+                    <p style={{ fontSize: "16px", margin: 0, color: "#555" }}>
                       {drinkName}
                     </p>
-                    <p style={{ fontSize: "40px", margin: 0, color: "#555" }}>
+                    <p style={{ fontSize: "16px", margin: 0, color: "#555" }}>
                       {quantity}({quantity * 30})개
                     </p>
                   </div>
@@ -115,11 +112,12 @@ const OrderEnd = () => {
               flexDirection: "row",
               display: "flex",
               justifyContent: "space-between",
+              marginBottom: "70px",
             }}
           >
             <p
               style={{
-                fontSize: 40,
+                fontSize: 18,
                 color: "#88B00C",
                 marginBottom: "10%",
                 fontWeight: 700,
@@ -127,8 +125,8 @@ const OrderEnd = () => {
             >
               총 주문 수량
             </p>
-            <p style={{ fontSize: 40, color: "#88B00C", fontWeight: 700 }}>
-            {totalQuantity} ({totalQuantity * 30}개)
+            <p style={{ fontSize: 18, color: "#88B00C", fontWeight: 700 }}>
+              {totalQuantity} ({totalQuantity * 30}개)
             </p>
           </div>
         </div>
