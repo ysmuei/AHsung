@@ -49,7 +49,7 @@ const OrderCheck = ({ userObj }) => {
       <header>
         <Link to="/Order">
           <FaChevronLeft
-            size="16"
+            size="20"
             style={{
               position: "absolute",
               left: 25,
@@ -58,7 +58,7 @@ const OrderCheck = ({ userObj }) => {
             }}
           />
         </Link>
-        <p style={{ fontSize: "16px", fontWeight: "700", color: "#555555" }}>
+        <p style={{ fontSize: "20px", fontWeight: "700", color: "#555555" }}>
           발주확인
         </p>
       </header>

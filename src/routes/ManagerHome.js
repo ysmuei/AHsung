@@ -29,7 +29,7 @@ const ManagerHome = ({ userObj }) => {
           <select
             value={selectedOption}
             onChange={(e) => handleSelect(e.target.value)}
-            style={{ width : "90%", height: 120, fontSize: 50, backgroundColor: 'white', color: 'black',display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: -50, marginBottom: 20, borderWidth: "2px",  borderRadius: 30, padding: 20}}
+            style={{ width : "90%", height: 50, fontSize: 12, backgroundColor: 'white', color: 'black',display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: -50, marginBottom: 20, borderWidth: "2px",  borderRadius: 30, padding: 20}}
           >
             <option style={{fontSize: '30px', alignItems: 'center,', justifyContent: 'center', borderRadius: 30, display: 'flex'}} value="호차를 선택하세요" >호차를 선택하세요</option>
             {options.map((option, index) => (

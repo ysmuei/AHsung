@@ -15,7 +15,7 @@ const OrderContent = () => {
       <header className="header">
         <Link to="/FranchHome">
           <FaChevronLeft
-            size="16"
+            size="20"
             style={{
               position: "absolute",
               left: 25,
@@ -24,7 +24,7 @@ const OrderContent = () => {
             }}
           />
         </Link>
-        <p style={{ fontSize: "16px", fontWeight: "700", color: "#383838" }}>
+        <p style={{ fontSize: "20px", fontWeight: "700", color: "#383838" }}>
           발주내역
         </p>
       </header>

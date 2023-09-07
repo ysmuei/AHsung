@@ -3,33 +3,33 @@ import { FaChevronLeft } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 const OrderDetail = () => {
   return (
-    <div className="container" style={{ height: "100vh" }}>
+    <div className="container">
       <header className="header">
-        <Link to="/OrderContent" style={{ backgroundColor: "black" }}>
+        <Link to="/OrderContent">
           <FaChevronLeft
-            size="55"
+            size="20"
             style={{
               position: "absolute",
-              left: 60,
-              top: 60,
+              left: 25,
+              top: 25,
               color: "#383838",
             }}
           />
         </Link>
-        <p style={{ fontSize: "45px", fontWeight: "600", color: "#383838" }}>
-          발주확인
+        <p style={{ fontSize: "20px", fontWeight: "600", color: "#383838" }}>
+          발주내역
         </p>
       </header>
       <div
         style={{
           width: "100%",
           height: "100vh",
-          padding: 30,
+          padding: "0% 4%",
         }}
       >
         <p
           style={{
-            fontSize: "40px",
+            fontSize: "18px",
             fontWeight: "500",
             margin: 0,
             color: "#555",
@@ -39,27 +39,27 @@ const OrderDetail = () => {
         </p>
         <p
           style={{
-            fontSize: "40px",
+            fontSize: "18px",
             fontWeight: "500",
-            marginTop: 20,
+            marginTop: "2%",
             color: "#555",
           }}
         >
           납기요청일 : {} 까지
         </p>
-        <p style={{ fontSize: "40px", fontWeight: 700, color: "#555" }}>{}</p>
-        <p style={{ fontSize: "40px", marginTop: -24, color: "#BDBDBD" }}>{}</p>
-        <hr />
-        <h2 style={{ fontSize: 55, fontWeight: 700 }}>배송내역</h2>
+        <p style={{ fontSize: "18px", fontWeight: 700, color: "#555" }}>{}</p>
+        <p style={{ fontSize: "18px", marginTop: "2%", color: "#BDBDBD" }}>{}</p>
+  
+        <h2 style={{ fontSize: "20px", fontWeight: 700 }}>배송내역</h2>
         
           <div className="menuContain" >
             <div style={{ display: "flex" }}>
-              <h3 style={{ fontSize: "45px", fontWeight: 700 }}>
+              <h3 style={{ fontSize: "20px", fontWeight: 700 }}>
                 {}
               </h3>
               <h3
                 style={{
-                  fontSize: "45px",
+                  fontSize: "16px",
                   color: "#BDBDBD",
                   marginLeft: 10,
                   fontWeight: 500,
@@ -85,7 +85,7 @@ const OrderDetail = () => {
           </div>
 
         <div>
-          <h2 style={{ fontSize: 55, fontWeight: 700 }}>주문 내역</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700 }}>주문 내역</h2>
           <div>
             {/* {quantities && Object.entries(quantities).map(([drinkName, quantity]) => {
               if (quantity > 0) {
@@ -123,7 +123,7 @@ const OrderDetail = () => {
           >
             <p
               style={{
-                fontSize: 45,
+                fontSize: 18,
                 color: "#88B00C",
                 marginBottom: "15%",
                 fontWeight: 700,
@@ -131,7 +131,7 @@ const OrderDetail = () => {
             >
               총 주문수량
             </p>
-            <p style={{ fontSize: 45, color: "#88B00C", fontWeight: 700 }}>
+            <p style={{ fontSize: 18, color: "#88B00C", fontWeight: 700 }}>
               {} ({0 * 30}개)
             </p>
           </div>

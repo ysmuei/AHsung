@@ -28,8 +28,8 @@ const OrderEnd = () => {
               size="26px"
               style={{
                 position: "absolute",
-                left: 25,
-                top: 25,
+                left: 20,
+                top: 20,
                 color: "#383838",
               }}
             />

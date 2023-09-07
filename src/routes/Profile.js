@@ -19,7 +19,7 @@ const Profile = ({ userObj }) => {
           src={logo}
           alt="로고"
           style={{
-            width: "26%",
+            width: "30%",
             marginTop: "4%",
           }}
         />
