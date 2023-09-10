@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.5.0",
     "date-fns": "^2.30.0",
     "react": "^18.2.0",
     "react-datepicker": "^4.16.0",
@@ -28,6 +29,7 @@
       "react-app/jest"
     ]
   },
+  "proxy": "https://port-0-ahsung-147bpb2mlm9bk1aw.sel5.cloudtype.app/",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -39,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "http-proxy-middleware": "^2.0.6"
   }
 }

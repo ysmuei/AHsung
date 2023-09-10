@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Profile from "./Profile";
 import { useState } from "react";
-import { FaTruck } from "react-icons/fa";
 
 const ManagerHome = ({ userObj }) => {
   const [selectedOption, setSelectedOption] = useState("호차를 선택하세요");
@@ -29,17 +28,17 @@ const ManagerHome = ({ userObj }) => {
           <select
             value={selectedOption}
             onChange={(e) => handleSelect(e.target.value)}
-            style={{ width : "90%", height: 50, fontSize: 12, backgroundColor: 'white', color: 'black',display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: -50, marginBottom: 20, borderWidth: "2px",  borderRadius: 30, padding: 20}}
+            style={{ width : "287px", height: "50px", fontSize: 16, backgroundColor: 'white', color: 'black',display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: -30, marginBottom: 20, borderWidth: "2px",  borderRadius: 12, padding: 5}}
           >
-            <option style={{fontSize: '30px', alignItems: 'center,', justifyContent: 'center', borderRadius: 30, display: 'flex'}} value="호차를 선택하세요" >호차를 선택하세요</option>
+            <option style={{fontSize: "16px", alignItems: 'center,', justifyContent: 'center', borderRadius: 30, display: 'flex'}} value="호차를 선택하세요" >호차를 선택하세요</option>
             {options.map((option, index) => (
-              <option key={index} value={option} style={{fontSize: '30px', borderRadius: 30}}>
+              <option key={index} value={option} style={{fontSize: '20px', borderRadius: 30}}>
                 {option}
               </option>
             ))}
           </select>
         </div>
-        <Link to="/" className="managerHome_Link">
+        <Link to="/OrderManager" className="managerHome_Link">
           <button className="basic_btn" style={{ backgroundColor: "#587302" }}>
             발주 가맹점 현황 확인하기
           </button>

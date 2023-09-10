@@ -8,13 +8,19 @@ const ManagerLogin = () => {
     const placeholder = "아이디"
     return(
         <div className="LoginContainer">
-            <Link to="/" style={{position: 'absolute', top: 50, left: 40}}>
-                <FaChevronLeft size="70"/>
+            <Link to="/" style={{width: "100%", display: "flex", alignItems: "center", justifyContent: "center"}}>
+                <FaChevronLeft size="16"
+                style={{
+                position: "absolute",
+                left: 25,
+                top: 25,
+                color: "#383838",
+                }}/>
             </Link>
-            <img src={logo} alt="아성주류발주어플" style={{width: 350, marginBottom: "400px"}} />
+            <img src={logo} alt="아성주류발주어플" style={{ width: "40%", marginBottom: "40%", marginTop: "20%" }} />
             <LoginForm placeholder={placeholder}/>
             <Link to="/ManagerHome" style={{position: 'absolute', bottom: 100}}>
-                <button style={{width: 300, height: 100}}>프로필 페이지</button>
+                <button style={{ width: "100%", height: 80, backgroundColor: "purple" }}>프로필 페이지</button>
             </Link>
         </div>
     ); 

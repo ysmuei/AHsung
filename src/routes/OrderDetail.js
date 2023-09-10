@@ -1,9 +1,9 @@
 import React from "react";
 import { FaChevronLeft } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 const OrderDetail = () => {
   return (
-    <div className="container">
+    <div className="container" style={{justifyContent: "start"}}>
       <header className="header">
         <Link to="/OrderContent">
           <FaChevronLeft

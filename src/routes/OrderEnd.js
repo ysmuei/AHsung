@@ -20,7 +20,7 @@ const OrderEnd = () => {
   const currentDate = formatDate(new Date());
 
   return (
-    <div className="container" >
+    <div className="container" style={{justifyContent: "start"}} >
       <div className="orderEnd">
         <header className="header" style={{ height: "8%" }}>
           <Link to="/FranchHome">

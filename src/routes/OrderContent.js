@@ -11,7 +11,7 @@ const OrderContent = () => {
   const [startDate, endDate] = dateRange;
 
   return (
-    <div className="container" style={{ backgroundColor: "#F8F8F8" }}>
+    <div className="container" style={{ backgroundColor: "#F8F8F8", justifyContent: "start" }}>
       <header className="header">
         <Link to="/FranchHome">
           <FaChevronLeft

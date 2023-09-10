@@ -45,7 +45,7 @@ form {
   display: flex;
   flex-direction: column;
   background-color: white;
-  justify-content: start;
+  justify-content: center;
   
 }
 .basic_btn {
