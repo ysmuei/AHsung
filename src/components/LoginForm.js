@@ -24,7 +24,7 @@ const LoginForm = ({ placeholder }) => {
 
   const handleLogin = async (event) => {
     event.preventDefault();
-
+    window.navigator.vibrate([1000]);
     if (isFormValid) {
       try {
         const data = JSON.stringify({
@@ -43,6 +43,12 @@ const LoginForm = ({ placeholder }) => {
         console.log(response.data.sessionData);
         // 로그인 성공 시 세션 상태를 변경
         setLoggedIn(true);
+        if ("vibrate" in navigator) {
+          // 진동이 지원되는 경우
+        
+          navigator.vibrate([1000]); // 1초간 진동
+        }
+
 
         // 성공한 후에 필요한 동작 수행
       } catch (error) {
@@ -84,6 +90,7 @@ const LoginForm = ({ placeholder }) => {
         <form
           style={{ display: 'flex', flexDirection: "column", alignItems: 'center' }}
           onSubmit={handleLogin}
+          
         >
           <input
             name="username"
