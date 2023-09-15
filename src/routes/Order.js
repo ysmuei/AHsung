@@ -16,7 +16,7 @@ import makgeolliGray from "../images/makgeolliGray.svg";
 import add from "../images/add.svg";
 import sub from "../images/sub.svg";
 
-const Order = ({ userObj }) => {
+const Order = ({ sessionData }) => {
   const navigate = useNavigate();
   const [selectedDate, setSelectedDate] = useState(new Date()); // 선택한 날짜를 상태로 관리
   const formatDate = (date) => {
@@ -209,7 +209,7 @@ const Order = ({ userObj }) => {
               marginBottom: "6%",
             }}
           >
-            {userObj.companyName}
+            {sessionData.상호명}
           </h3>
           <p
             style={{
@@ -923,6 +923,7 @@ const Order = ({ userObj }) => {
           } else {
             navigate("/OrderCheck", {
               state: {
+                sessionData: sessionData,
                 selectedDate: selectedDate,
                 quantities: quantities,
               },

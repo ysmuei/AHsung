@@ -4,10 +4,11 @@ import { FaFileAlt } from "react-icons/fa";
 import { FaBoxArchive } from "react-icons/fa6";
 import Profile from "./Profile";
 
-const FranchHome = ({ userObj }) => {
+const FranchHome = ({ sessionData }) => {
+  const companyName = sessionData.상호명;
   return (
     <div className="franchHome">
-      <Profile userObj={userObj} />
+      <Profile companyName={companyName} />
       <div className="order">
         <Link
           to="/Order"

@@ -19,7 +19,6 @@ const data = {
 
 function App() {
   const [sessionData, setSessionData] = useState(null);
-  console.log("App.js =", sessionData);
   const updateSessionData = (data) => {
     setSessionData(data);
   };
@@ -32,7 +31,7 @@ function App() {
     setScreenSize();
   });
   return (
-    <AppRouter userObj={data} updateSessionData={updateSessionData}/>
+    <AppRouter userObj={data} updateSessionData={updateSessionData} sessionData={sessionData}/>
   );
 }
 export default App;

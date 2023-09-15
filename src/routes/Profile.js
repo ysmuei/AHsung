@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import logo from "../images/logo.svg";
 
-const Profile = ({ userObj }) => {
+const Profile = ({ companyName }) => {
   const [currentDate, setCurrentDate] = useState(new Date());
-  const companyName = userObj.companyName;
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentDate(new Date());
