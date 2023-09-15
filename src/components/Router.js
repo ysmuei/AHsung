@@ -11,7 +11,7 @@ import OrderEnd from "routes/OrderEnd";
 import OrderContent from "routes/OrderContent";
 import OrderDetail from "routes/OrderDetail";
 import OrderManager from "routes/OrderManager";
-const AppRouter = ({ userObj }) => {
+const AppRouter = ({ userObj, updateSessionData }) => {
   return (
     <BrowserRouter>
       <div
@@ -25,7 +25,7 @@ const AppRouter = ({ userObj }) => {
       >
         <Routes>
           <Route path="/" element={<Splash />} />
-          <Route path="/Login" element={<Login />} />
+          <Route path="/Login" element={<Login updateSessionData={updateSessionData}/>} />
           <Route path="/ManagerLogin" element={<ManagerLogin />} />
           <Route path="/FranchHome" element={<FranchHome userObj={userObj}/>} />
           <Route path="/ManagerHome" element={<ManagerHome userObj={userObj}/>} />

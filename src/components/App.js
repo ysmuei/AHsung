@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AppRouter from "./Router";
 import Modal from 'react-modal';
 // https://nykim.work/85
@@ -18,7 +18,11 @@ const data = {
   // height: calc(var(--vh, 1vh) * 100);
 
 function App() {
-  
+  const [sessionData, setSessionData] = useState(null);
+  console.log("App.js =", sessionData);
+  const updateSessionData = (data) => {
+    setSessionData(data);
+  };
   Modal.setAppElement('#root');
   function setScreenSize() {
     let vh = window.innerHeight * 0.01;
@@ -28,7 +32,7 @@ function App() {
     setScreenSize();
   });
   return (
-    <AppRouter userObj={data}/>
+    <AppRouter userObj={data} updateSessionData={updateSessionData}/>
   );
 }
 export default App;
