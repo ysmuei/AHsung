@@ -17,6 +17,7 @@ import add from "../images/add.svg";
 import sub from "../images/sub.svg";
 
 const Order = ({ sessionData }) => {
+  const companyName = sessionData.상호명;
   const navigate = useNavigate();
   const [selectedDate, setSelectedDate] = useState(new Date()); // 선택한 날짜를 상태로 관리
   const formatDate = (date) => {
@@ -209,7 +210,7 @@ const Order = ({ sessionData }) => {
               marginBottom: "6%",
             }}
           >
-            {sessionData.상호명}
+            {companyName}
           </h3>
           <p
             style={{

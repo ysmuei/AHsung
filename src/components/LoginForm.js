@@ -40,7 +40,6 @@ const LoginForm = ({ placeholder, updateSessionData }) => {
         });
 
         console.log("로그인 성공:", response);
-        console.log(response.data);
         // 로그인 성공 시 세션 상태를 변경
         setLoggedIn(true);
         // 세션 데이터를 App.js의 콜백 함수에 전달

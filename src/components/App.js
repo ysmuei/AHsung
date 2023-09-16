@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import AppRouter from "./Router";
 import Modal from 'react-modal';
+import axios from "axios";
 // https://nykim.work/85
+// 1. axios 전역 설정
+axios.defaults.withCredentials = true; // withCredentials 전역 설정
 const data = {
     code: 1004,
     companyName: "유빈이네 닭갈비유",

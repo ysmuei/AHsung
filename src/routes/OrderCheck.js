@@ -36,23 +36,24 @@ const OrderCheck = ({ userObj }) => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-  const url = "/order/";
+  const url = "/orders";
   // 주문 확인 후 서버로 데이터 전송
   const sendOrderData = async () => {
     try {
       const response = await axios.post(
         url,
         {
-          date: date,
-          quantities: quantities,
-          totalQuantity: totalQuantity,
-          sessionData: session, // 세션 데이터 추가
+          // date: date,
+          // quantities: quantities,
+          // totalQuantity: totalQuantity,
+          // sessionData: session, // 세션 데이터 추가
+          "골든블루":100,
+          "생 테라": 40
         },
         {
-          withCredentials: true, // 쿠키 포함
+          withCredentials: true,
           headers: {
             "Content-Type": "application/json",
-            // 'Cookie': `sessionid=${session.session_id}`  // JSON 데이터를 보낼 경우 설정
           },
         }
       );
